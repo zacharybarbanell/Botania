@@ -3,18 +3,17 @@ package vazkii.botania.data;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.damagesource.DamageTypes;
 
 import vazkii.botania.common.BotaniaDamageTypes;
 import vazkii.botania.common.lib.BotaniaTags;
+import vazkii.botania.data.util.TagsProviderForceable;
 
 import java.util.concurrent.CompletableFuture;
 
-// Unused currently. Crashes on tag gen because it can't find botania's damage types, as they're not registered yet.
-public class DamageTypeTagProvider extends TagsProvider<DamageType> {
+public class DamageTypeTagProvider extends TagsProviderForceable<DamageType> {
 
 	public DamageTypeTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
 		super(packOutput, Registries.DAMAGE_TYPE, lookupProvider);
@@ -32,14 +31,14 @@ public class DamageTypeTagProvider extends TagsProvider<DamageType> {
 				DamageTypes.FLY_INTO_WALL
 		).addTag(DamageTypeTags.IS_FIRE);
 
-		this.tag(DamageTypeTags.BYPASSES_ARMOR).add(
+		this.tagUnchecked(DamageTypeTags.BYPASSES_ARMOR).add(
 				BotaniaDamageTypes.PLAYER_ATTACK_ARMOR_PIERCING,
 				BotaniaDamageTypes.RELIC_DAMAGE
 		);
 
-		this.tag(DamageTypeTags.BYPASSES_RESISTANCE).add(BotaniaDamageTypes.RELIC_DAMAGE);
-		this.tag(DamageTypeTags.NO_IMPACT).add(BotaniaDamageTypes.RELIC_DAMAGE);
-		this.tag(DamageTypeTags.BYPASSES_EFFECTS).add(BotaniaDamageTypes.RELIC_DAMAGE);
-		this.tag(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(BotaniaDamageTypes.RELIC_DAMAGE);
+		this.tagUnchecked(DamageTypeTags.BYPASSES_RESISTANCE).add(BotaniaDamageTypes.RELIC_DAMAGE);
+		this.tagUnchecked(DamageTypeTags.NO_IMPACT).add(BotaniaDamageTypes.RELIC_DAMAGE);
+		this.tagUnchecked(DamageTypeTags.BYPASSES_EFFECTS).add(BotaniaDamageTypes.RELIC_DAMAGE);
+		this.tagUnchecked(DamageTypeTags.BYPASSES_ENCHANTMENTS).add(BotaniaDamageTypes.RELIC_DAMAGE);
 	}
 }
