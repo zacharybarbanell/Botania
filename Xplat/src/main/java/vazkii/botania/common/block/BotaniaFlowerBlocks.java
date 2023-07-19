@@ -87,6 +87,9 @@ public class BotaniaFlowerBlocks {
 	public static final Block shulkMeNot = createSpecialFlowerBlock(MobEffects.LEVITATION, 72, FLOWER_PROPS, () -> BotaniaFlowerBlocks.SHULK_ME_NOT);
 	public static final Block shulkMeNotFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> BotaniaFlowerBlocks.SHULK_ME_NOT);
 
+	public static final Block beetunia = createSpecialFlowerBlock(MobEffects.HARM, 0, FLOWER_PROPS, () -> BotaniaFlowerBlocks.BEETUNIA);
+	public static final Block beetuniaFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> BotaniaFlowerBlocks.BEETUNIA);
+
 	public static final Block bellethorn = createSpecialFlowerBlock(MobEffects.WITHER, 10, FLOWER_PROPS, () -> BotaniaFlowerBlocks.BELLETHORNE);
 	public static final Block bellethornChibi = createSpecialFlowerBlock(MobEffects.WITHER, 10, FLOWER_PROPS, () -> BotaniaFlowerBlocks.BELLETHORNE_CHIBI);
 	public static final Block bellethornFloating = new FloatingSpecialFlowerBlock(FLOATING_PROPS, () -> BotaniaFlowerBlocks.BELLETHORNE);
@@ -240,6 +243,7 @@ public class BotaniaFlowerBlocks {
 	public static final BlockEntityType<SolegnoliaBlockEntity> SOLEGNOLIA = XplatAbstractions.INSTANCE.createBlockEntityType(SolegnoliaBlockEntity::new, solegnolia, solegnoliaFloating);
 	public static final BlockEntityType<SolegnoliaBlockEntity.Mini> SOLEGNOLIA_CHIBI = XplatAbstractions.INSTANCE.createBlockEntityType(SolegnoliaBlockEntity.Mini::new, solegnoliaChibi, solegnoliaChibiFloating);
 	public static final BlockEntityType<OrechidIgnemBlockEntity> ORECHID_IGNEM = XplatAbstractions.INSTANCE.createBlockEntityType(OrechidIgnemBlockEntity::new, orechidIgnem, orechidIgnemFloating);
+	public static final BlockEntityType<BeetuniaBlockEntity> BEETUNIA = XplatAbstractions.INSTANCE.createBlockEntityType(BeetuniaBlockEntity::new, beetunia, beetuniaFloating);
 
 	private static ResourceLocation floating(ResourceLocation orig) {
 		return new ResourceLocation(orig.getNamespace(), "floating_" + orig.getPath());
@@ -307,6 +311,9 @@ public class BotaniaFlowerBlocks {
 
 		r.accept(shulkMeNot, LibBlockNames.SUBTILE_SHULK_ME_NOT);
 		r.accept(shulkMeNotFloating, floating(LibBlockNames.SUBTILE_SHULK_ME_NOT));
+
+		r.accept(beetunia, LibBlockNames.SUBTILE_BEETUNIA);
+		r.accept(beetuniaFloating, floating(LibBlockNames.SUBTILE_BEETUNIA));
 
 		r.accept(bellethorn, LibBlockNames.SUBTILE_BELLETHORN);
 		r.accept(bellethornChibi, chibi(LibBlockNames.SUBTILE_BELLETHORN));

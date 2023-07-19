@@ -111,7 +111,7 @@ public class BlockTagProvider extends IntrinsicHolderTagsProvider<Block> {
 
 		tag(BotaniaTags.Blocks.MISC_SPECIAL_FLOWERS).add(manastar, pureDaisy, bergamute);
 		tag(BotaniaTags.Blocks.GENERATING_SPECIAL_FLOWERS).add(
-				dandelifeon, endoflame, entropinnyum,
+				beetunia, dandelifeon, endoflame, entropinnyum,
 				gourmaryllis, hydroangeas, kekimurus,
 				munchdew, narslimmus, rafflowsia, rosaArcana,
 				shulkMeNot, spectrolus, thermalily

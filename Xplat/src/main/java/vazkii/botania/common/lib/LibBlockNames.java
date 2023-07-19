@@ -182,6 +182,7 @@ public final class LibBlockNames {
 	public static final ResourceLocation SUBTILE_DANDELIFEON = prefix("dandelifeon");
 	public static final ResourceLocation SUBTILE_RAFFLOWSIA = prefix("rafflowsia");
 	public static final ResourceLocation SUBTILE_SHULK_ME_NOT = prefix("shulk_me_not");
+	public static final ResourceLocation SUBTILE_BEETUNIA = prefix("beetunia");
 
 	public static final ResourceLocation SUBTILE_BELLETHORN = prefix("bellethorn");
 	public static final ResourceLocation SUBTILE_BERGAMUTE = prefix("bergamute");
